@@ -10,7 +10,7 @@ single: true
         {% include article.html %}
         <div class="row">
           <div class="col-xs-12 pull-right">
-          {% unless post.sharing == false %}<div class="pull-right">{% include post/sharing.html %}</div>{% endunless %}
+          {% unless page.sharing == false %}<div class="pull-right">{% include post/sharing.html %}</div>{% endunless %}
           </div>
         </div>
         <footer>

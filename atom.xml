@@ -4,7 +4,7 @@
   <title><![CDATA[SAMEER NAIK]]></title>
   <link href="http://www.damagehead.com/atom.xml" rel="self"/>
   <link href="http://www.damagehead.com/"/>
-  <updated>2014-11-01T00:04:19+05:30</updated>
+  <updated>2014-11-01T00:06:10+05:30</updated>
   <id>http://www.damagehead.com/</id>
   <author>
     <name><![CDATA[Sameer Naik]]></name>
@@ -12,14 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://www.damagehead.com/blog/2014/10/31/hello-world/"/>
-    <updated>2014-10-31T23:53:29+05:30</updated>
-    <id>http://www.damagehead.com/blog/2014/10/31/hello-world</id>
-    <content type="html"><![CDATA[<p>After a lot of work</p>
-]]></content>
-  </entry>
   
 </feed>

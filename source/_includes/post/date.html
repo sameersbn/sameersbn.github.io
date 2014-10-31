@@ -1,0 +1,2 @@
+{% if page.date %}{% capture time %}{{ page.date | date: "<span class='month'>%B</span> <span class='day'>%d</span>, <span class='year'>%Y</span>"}}{% endcapture %}{% endif %}
+{% if post.date %}{% capture time %}{{ post.date | date: "<span class='month'>%B</span> <span class='day'>%d</span>, <span class='year'>%Y</span>"}}{% endcapture %}{% endif %}

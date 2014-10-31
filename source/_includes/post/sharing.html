@@ -1,0 +1,14 @@
+<div class="sharing">
+  {% if site.twitter_tweet_button %}
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{ page.url }}" data-via="{{ site.twitter_user }}" data-counturl="{{ site.url }}{{ page.url }}" >Tweet</a>
+  {% endif %}
+  {% if site.google_plus_one %}
+  <div class="g-plusone" data-size="{{ site.google_plus_one_size }}"></div>
+  {% endif %}
+  {% if site.facebook_like %}
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  {% endif %}
+  {% if site.flattr_user %}
+  <a class="FlattrButton" style="display:none;" title="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" data-flattr-uid="{{ site.flattr_user }}" data-flattr-tags="{{ page.categories | join: "," }}" data-flattr-button="compact" data-flattr-category="text" href="{{ site.url }}{{ page.url }}">{% if page.description %}{{ page.description }}{% endif %}</a>
+  {% endif %}
+</div>

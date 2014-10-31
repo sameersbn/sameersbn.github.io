@@ -1,0 +1,36 @@
+---
+layout: default
+single: true
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <article class="hentry" role="article">
+        {% include article.html %}
+        <div class="row">
+          <div class="col-xs-12 pull-right">
+          {% unless post.sharing == false %}<div class="pull-right">{% include post/sharing.html %}</div>{% endunless %}
+          </div>
+        </div>
+        <footer>
+        {% if page.previous.url or page.next.url %}
+          <ul class="pager">
+            {% if page.previous.url %}
+            <li class="previous"><a href="{{page.previous.url}}">&larr; Older</a></li>
+            {% endif %}
+            {% if page.next.url %}
+            <li class="next"><a href="{{page.next.url}}">Newer &rarr;</a></li>
+            {% endif %}
+          </ul>
+        {% endif %}
+        </footer>
+      </article>
+      {% if site.disqus_short_name and page.comments == true %}
+        <section>
+          <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+        </section>
+      {% endif %}
+    </div>
+  </div>
+</div>

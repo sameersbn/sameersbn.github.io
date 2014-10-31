@@ -1,0 +1,3 @@
+[submodule ".themes/octohead"]
+	path = .themes/octohead
+	url = https://github.com/sameersbn/octohead

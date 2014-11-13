@@ -8,12 +8,12 @@ single: true
     <div class="col-xs-12">
       <article class="hentry" role="article">
         {% include article.html %}
+        <footer>
         <div class="row">
-          <div class="col-xs-12 pull-right">
-          {% unless page.sharing == false %}<div class="pull-right">{% include post/sharing.html %}</div>{% endunless %}
+          <div class="sharing">
+            {% unless page.sharing == false %}{% include post/sharing.html %}{% endunless %}
           </div>
         </div>
-        <footer>
         {% if page.previous.url or page.next.url %}
           <ul class="pager">
             {% if page.previous.url %}

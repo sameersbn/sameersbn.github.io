@@ -1,11 +1,11 @@
 {% capture category %}{{ post.categories | size }}{% endcapture %}
 <header>
   <div class="row">
-    <div class="entry-title col-xs-12 col-sm-9">
+    <div class="entry-title">
       <h1><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
     </div>
-    <div class="clearfix visible-xs"></div>
-    <div class="entry-date col-xs-12 col-sm-3">
+    <div class="clearfix"></div>
+    <div class="entry-date">
       <span>{% unless page.meta == false %}{% include post/date.html %}{{ time }}{% endunless %}</span>
     </div>
   </div>
@@ -13,7 +13,7 @@
   {% if category != '0' %}
   <footer>
     <div class="row">
-      <div class="entry-categories col-xs-12">{% include post/categories.html %}</div>
+      <div class="entry-categories">{% include post/categories.html %}</div>
     </div>
   </footer>
   {% endif %}

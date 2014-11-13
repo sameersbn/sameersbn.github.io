@@ -24,15 +24,97 @@ article {
       font-size: $categories-font-size;
     }
   }
+  footer {
+    .pager {
+      margin: 0 0 1em;
+    }
+  }
   p {
-    margin: 15px 0;
+    margin: 0 0 0.8em;
   }
   img {
     @extend .img-responsive;
     display: block;
-    margin: 15px auto;
+    margin: 1em auto;
   }
   .img-shadow {
-    box-shadow: 0 0 15px $gray;
+    @include box-shadow(rgba(#000, .25) 0 0 10px);
+    border: 1px solid #ddd;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .window-chrome {
+      padding-top: image-height("window-chrome-md.png") !important;
+      background: url("/images/window-chrome-md.png") no-repeat;
+      border: 1px solid #d8d8d8;
+      @include border-radius(.5em);
+      @include box-shadow(rgba(#000, .25) 0 0 20px);
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .window-chrome {
+      padding-top: image-height("window-chrome-xs.png") !important;
+      background: url("/images/window-chrome-xs.png") no-repeat;
+      border: 1px solid #d8d8d8;
+      @include border-radius(.3em);
+      @include box-shadow(rgba(#000, .25) 0 0 10px);
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .window-yosemite {
+      padding-top: image-height("window-yosemite-md.png") !important;
+      background: url("/images/window-yosemite-md.png") no-repeat;
+      border: 1px solid #d8d8d8;
+      @include border-radius(.3em);
+      @include box-shadow(rgba(#000, .25) 0 0 20px);
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .window-yosemite {
+      padding-top: image-height("window-yosemite-xs.png") !important;
+      background: url("/images/window-yosemite-xs.png") no-repeat;
+      border: 1px solid #d8d8d8;
+      @include border-radius(.2em);
+      @include box-shadow(rgba(#000, .25) 0 0 10px);
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .window-firefox {
+      padding-top: image-height("window-firefox-md.png") !important;
+      background: url("/images/window-firefox-md.png") no-repeat;
+      border: 1px solid #d8d8d8;
+      @include border-radius(.5em);
+      @include box-shadow(rgba(#000, .25) 0 0 20px);
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .window-firefox {
+      padding-top: image-height("window-firefox-xs.png") !important;
+      background: url("/images/window-firefox-xs.png") no-repeat;
+      border: 1px solid #d8d8d8;
+      @include border-radius(.4em);
+      @include box-shadow(rgba(#000, .25) 0 0 10px);
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .window-generic {
+      padding-top: image-height("window-generic-md.png") !important;
+      background: url("/images/window-generic-md.png") no-repeat;
+      border: 2px solid #323232;
+      @include border-radius(.5em);
+      @include box-shadow(rgba(#000, .25) 0 0 20px);
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .window-generic {
+      padding-top: image-height("window-generic-xs.png") !important;
+      background: url("/images/window-generic-xs.png") no-repeat;
+      border: 2px solid #323232;
+      @include border-radius(.3em);
+      @include box-shadow(rgba(#000, .25) 0 0 10px);
+    }
   }
 }

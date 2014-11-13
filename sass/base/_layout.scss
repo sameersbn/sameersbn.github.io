@@ -1,2 +1,59 @@
 $container-md: 750px !default;
 $container-lg: $container-md !default;
+
+body {
+  > header {
+    .branding {
+      @extend .col-xs-12;
+      @extend .col-sm-6;
+    }
+    .clearfix {
+      @extend .visible-xs-block;
+    }
+    .navigation {
+      @extend .col-xs-12;
+      @extend .col-sm-6;
+    }
+  }
+  > footer {
+    .footer {
+      @extend .col-xs-12;
+      .copyright {
+        @extend .clearfix;
+      }
+      .disclaimer {
+        @extend .clearfix;
+      }
+      .credit {
+        @extend .clearfix;
+      }
+    }
+  }
+}
+
+article {
+  > header {
+    .entry-title {
+      @extend .col-xs-12;
+      @extend .col-sm-9;
+    }
+    .clearfix {
+      @extend .visible-xs;
+    }
+    .entry-date {
+      @extend .col-xs-12;
+      @extend .col-sm-3;
+    }
+    .entry-categories {
+      @extend .col-xs-12;
+    }
+  }
+  > footer {
+    .sharing {
+      @extend .col-xs-12;
+      .buttons {
+        @extend .pull-right;
+      }
+    }
+  }
+}

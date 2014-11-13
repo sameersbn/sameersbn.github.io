@@ -1,0 +1,186 @@
+pre, html .gist .gist-file, html .gist .gist-file .gist-syntax .highlight .line-numbers {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  @include border-radius(0px);
+}
+
+pre, html .gist .line-pre, html .gist .gist-file .line-number {
+  font-family: $font-family-monospace;
+}
+
+figure.code .highlight, html .gist .gist-file {
+  margin-bottom: 1em;
+  border: 1px solid $pre-border;
+  @include border-radius($pre-border-radius);
+  @include box-shadow(rgba(#000, .15) 0 0 10px);
+}
+
+html .gist .gist-file pre {
+  @include border-top-left-radius($pre-border-radius);
+  @include border-bottom-left-radius($pre-border-radius);
+}
+
+html .gist .gist-file  {
+  .gist-data {
+    @include border-top-left-radius($pre-border-radius);
+    @include border-top-right-radius($pre-border-radius);
+  }
+  .gist-meta {
+    @include border-bottom-left-radius($pre-border-radius);
+    @include border-bottom-right-radius($pre-border-radius);
+  }
+}
+
+@if $pre-gutter == hidden {
+  .gutter, html .gist .gist-file .line-numbers {
+    display: none;
+  }
+}
+
+.highlight .line-numbers {
+  span { color: $pre-gutter-fg !important; }
+  background-color: $pre-gutter-bg !important;
+  border-right: 1px solid $pre-border !important;
+  font-size: 13px !important;
+  text-align: right;
+}
+
+pre, html .gist .gist-file .line-numbers, html .gist .gist-file .line-data {
+  padding: .8em 1em !important;
+}
+
+.highlight, html .gist .gist-file .file-data .line-data {
+  width: 100%;
+  background-color: $pre-hll-bg;
+}
+
+.highlight pre {
+  @extend .pre-code;
+}
+
+.highlight {
+  overflow: auto;
+  .code {
+    width: 100%;
+    .line {
+      white-space: pre;
+    }
+  }
+}
+
+figure.code figcaption {
+  position: relative;
+  @extend .code-title;
+  a {
+    @extend .download-source;
+  }
+}
+.code-title {
+  font-size: 13px;
+  text-align: center;
+  line-height: 2em;
+  span {
+    font-weight: bold;
+  }
+}
+
+.download-source {
+  position: absolute;
+  right: .8em;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 11px;
+  padding-left: 3em;
+  &:hover {
+    color: #999;
+  }
+}
+
+.pre-code {
+  font-family: $font-family-monospace !important;
+  font-size: $pre-font-size !important;
+  overflow: scroll;
+  overflow-y: hidden;
+  display: block;
+  padding: .8em;
+  overflow-x: auto;
+  line-height: 1.45em;
+  color: $pre-hll-fg !important;
+  span { color: $pre-hll-fg !important; }
+  span { font-style: normal !important; font-weight: normal !important; }
+
+  .hll { background-color: $pre-hll-bg !important; }
+  .c  { color: $pre-c !important; font-style: italic !important; }
+  .cm { color: $pre-cm !important; font-style: italic !important; }
+  .c1 { color: $pre-c1 !important; font-style: italic !important; }
+  .err { color: $pre-err !important; background-color: $pre-err-bg !important; }
+  .cp { color: $pre-cp !important; font-weight: bold !important; }
+  .cs { color: $pre-cs !important; font-style: italic !important; }
+  .gd { color: $pre-gd !important; background-color: $pre-gd-bg !important; }
+  .ge { font-style: $pre-ge-font-style !important; }
+  .gr { color: $pre-gr !important; }
+  .gh { color: $pre-gh !important; font-weight: bold !important; }
+  .gi { color: $pre-gi !important; background-color: $pre-gi-bg !important; }
+  .go { color: $pre-go !important; }
+  .gp { color: $pre-gp !important; }
+  .gs { font-weight: $pre-gs-font-weight !important; }
+  .gu { color: $pre-gu !important; font-weight: bold !important; }
+  .gt { color: $pre-gt !important; }
+  .k { color: $pre-k !important; font-weight: bold !important; }
+  .kc { color: $pre-kc !important; }
+  .kd { color: $pre-kd !important; }
+  .kn { color: $pre-kn !important; }
+  .kp { color: $pre-kp !important; }
+  .kr { color: $pre-kr !important; }
+  .kt { color: $pre-kt !important; }
+  .m { color: $pre-m !important; }
+  .s { color: $pre-s !important; }
+  .n {color: $pre-n !important; }
+  .na { color: $pre-na !important; }
+  .nb { color: $pre-nb !important; }
+  .nc { color: $pre-nc !important; text-decoration: underline !important; }
+  .no { color: $pre-no !important; }
+  .nd { color: $pre-nd !important; }
+  .ni { color: $pre-ni !important; font-weight: bold !important; }
+  .nf { color: $pre-nf !important; }
+  .nl { color: $pre-nl !important; }
+  .nn { color: $pre-nn !important; text-decoration: underline !important; }
+  .nt { color: $pre-nt !important; font-weight: bold !important; }
+  .nv { color: $pre-nt !important; }
+  .o { color: $pre-o !important; }
+  .ow { color: $pre-ow !important; }
+  .p { color: $pre-p !important; }
+  .w { color: $pre-w !important; }
+  .l { color: $pre-l !important; }
+  .mf { color: $pre-mf !important; }
+  .mh { color: $pre-mh !important; }
+  .mi { color: $pre-mi !important; }
+  .mo { color: $pre-mo !important; }
+  .sb { color: $pre-sb !important; }
+  .sc { color: $pre-sc !important; }
+  .sd { color: $pre-sd !important; }
+  .s2 { color: $pre-s2 !important; }
+  .se { color: $pre-se !important; }
+  .sh { color: $pre-sh !important; }
+  .si { color: $pre-si !important; }
+  .sx { color: $pre-sx !important; }
+  .sr { color: $pre-sr !important; }
+  .s1 { color: $pre-s1 !important; }
+  .ss { color: $pre-ss !important; }
+  .bp { color: $pre-bp !important; }
+  .vc { color: $pre-vc !important; }
+  .vg { color: $pre-vg !important; }
+  .vi { color: $pre-vi !important; }
+  .il { color: $pre-il !important; }
+
+  // github
+  .pl-c { @extend .c; }
+  .pl-c1 { @extend .mi; }
+  .pl-en { @extend .nf; }
+  .pl-k { @extend .k; }
+  .pl-s { @extend .k; }
+  .pl-st { @extend .kt; }
+  .pl-s1 { @extend .s; }
+}

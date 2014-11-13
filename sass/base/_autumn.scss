@@ -1,0 +1,84 @@
+$pre-font-size: 13px !default;
+$pre-border: #DDD !default;
+$pre-border-radius: .4em !default;
+
+$pre-gutter: visible !default;
+$pre-gutter-bg: #F3F3F3 !default;       /* Gutter Background */
+$pre-gutter-fg: #CCC !default;          /* Gutter Foreground */
+
+$pre-hll-bg: #ffffcc !default;          /* Background */
+$pre-hll-fg: #333 !default;             /* Foreground */
+
+$pre-c: #aaa !default;                  /* Comment */
+$pre-c1: $pre-c !default;               /* Comment.Single */
+$pre-cm: $pre-c !default;               /* Comment.Multiline */
+$pre-cp: #4c8317 !default;              /* Comment.Preproc */
+$pre-cs: #0000aa !default;              /* Comment.Special */
+
+$pre-err: #F00000 !default;             /* Error */
+$pre-err-bg: #F0A0A0 !default;
+
+$pre-gd: #aa0000 !default;              /* Generic.Deleted */
+$pre-gd-bg: #fdd !default;
+$pre-ge-font-style: italic !default;    /* Generic.Emph */
+$pre-gr: #aa0000 !default;              /* Generic.Error */
+$pre-gh: #000080 !default;              /* Generic.Heading */
+$pre-gi: #00aa00 !default;              /* Generic.Inserted */
+$pre-gi-bg: #dfd !default;
+$pre-go: #888888 !default;              /* Generic.Output */
+$pre-gp: #555555 !default;              /* Generic.Prompt */
+$pre-gs-font-weight: bold !default;     /* Generic.Strong */
+$pre-gu: #800080 !default;              /* Generic.Subheading */
+$pre-gt: #aa0000 !default;              /* Generic.Traceback */
+
+$pre-k: #0000aa !default;               /* Keyword */
+$pre-kc: $pre-k !default;               /* Keyword.Constant */
+$pre-kd: $pre-k !default;               /* Keyword.Declaration */
+$pre-kn: $pre-k !default;               /* Keyword.Namespace */
+$pre-kp: $pre-k !default;               /* Keyword.Pseudo */
+$pre-kr: $pre-k !default;               /* Keyword.Reserved */
+$pre-kt: #00aaaa !default;              /* Keyword.Type */
+
+$pre-n: #333 !default;                  /* Name */
+$pre-na: #1e90ff !default;              /* Name.Attribute */
+$pre-nb: #00aaaa !default;              /* Name.Builtin */
+$pre-nc: #00aa00 !default;              /* Name.Class */
+$pre-no: #aa0000 !default;              /* Name.Constant */
+$pre-nd: #888888 !default;              /* Name.Decorator */
+$pre-ni: #800000 !default;              /* Name.Entity */
+$pre-nf: #00aa00 !default;              /* Name.Function */
+$pre-nl: #0000aa !default;              /* Name.Label */
+$pre-nn: #00aaaa !default;              /* Name.Namespace */
+$pre-nt: #1e90ff !default;              /* Name.Tag */
+$pre-nv: #aa0000 !default;              /* Name.Variable */
+$pre-bp: #00aaaa !default;              /* Name.Builtin.Pseudo */
+$pre-vc: #aa0000 !default;              /* Name.Variable.Class */
+$pre-vg: $pre-vc !default;              /* Name.Variable.Global */
+$pre-vi: $pre-vc !default;              /* Name.Variable.Instance */
+
+$pre-o: #f92672 !default;               /* Operator */
+$pre-ow: #0000aa !default;              /* Operator.Word */
+$pre-p: #333 !default;                  /* Operator.Parenthesis */
+
+$pre-w: #bbbbbb !default;               /* Text.Whitespace */
+
+$pre-l: #009999 !default;               /* Literal */
+$pre-il: $pre-l !default;               /* Literal.Number.Integer.Long */
+$pre-m: $pre-l !default;                /* Literal.Number */
+$pre-mf: $pre-l !default;               /* Literal.Number.Float */
+$pre-mh: $pre-l !default;               /* Literal.Number.Hex */
+$pre-mi: $pre-l !default;               /* Literal.Number.Integer */
+$pre-mo: $pre-l !default;               /* Literal.Number.Oct */
+
+$pre-s: #aa5500 !default;               /* Literal.String */
+$pre-sb: $pre-s !default;               /* Literal.String.Backtick */
+$pre-sc: $pre-s !default;               /* Literal.String.Char */
+$pre-sd: $pre-s !default;               /* Literal.String.Doc */
+$pre-s2: $pre-s !default;               /* Literal.String.Double */
+$pre-se: $pre-s !default;               /* Literal.String.Escape */
+$pre-sh: $pre-s !default;               /* Literal.String.Heredoc */
+$pre-si: $pre-s !default;               /* Literal.String.Interpol */
+$pre-sx: $pre-s !default;               /* Literal.String.Other */
+$pre-sr: #009999 !default;              /* Literal.String.Regex */
+$pre-s1: $pre-s !default;               /* Literal.String.Single */
+$pre-ss: #0000aa !default;              /* Literal.String.Symbol */

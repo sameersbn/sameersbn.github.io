@@ -1,0 +1,27 @@
+body > header {
+  nav {
+    padding-right: 10px;
+    ul {
+      @extend .navbar-right;
+      @extend .list-inline;
+      li {
+        padding-top: $nav-item-padding-top;
+        font-size: $nav-item-font-size;
+        font-weight: $nav-item-font-weight;
+        @media (max-width: $screen-xs-max) {
+          font-size: ceil(($nav-item-font-size * 0.9));
+          padding-top: 0;
+        }
+        a, a:visited {
+          display: inline-block;
+          color: $nav-item-color;
+          text-transform: lowercase;
+          &:hover {
+            @include animation(wobble 0.1s infinite);
+            color: $nav-item-hover-color;
+          }
+        }
+      }
+    }
+  }
+}

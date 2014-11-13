@@ -1,0 +1,13 @@
+body > footer {
+  margin-top: 5px;
+  color: $footer-color;
+  font-size: $footer-font-size;
+  .disclaimer {
+    color: $footer-disclaimer-color;
+    font-size: $footer-disclaimer-font-size;
+  }
+  .credit {
+    color: $footer-credit-color;
+    font-size: $footer-credit-font-size;
+  }
+}

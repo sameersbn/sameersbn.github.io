@@ -1,0 +1,29 @@
+@include keyframes(wobble) {
+  0% { @include rotate(0deg); }
+  20% { @include rotate(5deg); }
+  50% { @include rotate(-5deg); }
+  100% { @include rotate(0deg); }
+}
+
+body > header {
+  @include gradient-vertical($header-gradient-start-color, $header-gradient-end-color);
+  border: 0 solid $header-border-color;
+  border-top-width: $header-border-top-width;
+  /* xs and lower */
+  @media (max-width: $screen-xs-max) {
+    .branding, .navigation {
+      text-align: center;
+    }
+  }
+  h1 {
+    display: inline-block;
+    line-height: 0;
+    a, a:visited, a:hover {
+      color: $branding-color;
+      font-size: $branding-font-size;
+      font-weight: $branding-font-weight;
+      line-height: $branding-line-height;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+$text-color: #555 !default;
+$link-color: #467ed2 !default;
+$link-hover-color: darken($link-color, 10%) !default;
+$link-active-color: $link-hover-color !default;
+
+$link-hover-decoration: none !default;
+$link-active-decoration: none !default;
+
+$branding-color: $link-color !default;
+
+$nav-item-padding-top: 18px !default;
+$nav-item-color: $link-color !default;
+$nav-item-hover-color: $link-hover-color !default;
+$nav-item-active-color: $link-active-color !default;
+
+$header-border-color: $link-color !default;
+$header-gradient-start-color: #e2eff5 !default;
+$header-gradient-end-color: #fff !default;
+$header-border-top-width: 7px !default;
+
+$categories-color: #aaa !default;
+$date-color: #aaa !default;
+
+$footer-color: #777 !default;
+$footer-link-color: $link-color !default;
+$footer-link-hover-color: $link-hover-color !default;
+$footer-credit-color: #999 !default;
+$footer-disclaimer-color: $footer-color;

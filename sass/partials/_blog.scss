@@ -37,6 +37,18 @@ article {
     display: block;
     margin: 1em auto;
   }
+
+  .embed-video-16by9 {
+    @extend .embed-responsive;
+    @extend .embed-responsive-16by9;
+    margin: 0 0 0.8em;
+  }
+  .embed-video-4by3 {
+    @extend .embed-responsive;
+    @extend .embed-responsive-4by3;
+    margin: 0 0 0.8em;
+  }
+
   .img-shadow {
     @include box-shadow(rgba(#000, .25) 0 0 10px);
     border: 1px solid #ddd;

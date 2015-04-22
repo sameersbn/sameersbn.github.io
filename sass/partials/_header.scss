@@ -9,6 +9,7 @@ body > header {
   @include gradient-vertical($header-gradient-start-color, $header-gradient-end-color);
   border: 0 solid $header-border-color;
   border-top-width: $header-border-top-width;
+  padding-bottom: $header-padding-bottom;
   /* xs and lower */
   @media (max-width: $screen-xs-max) {
     .branding, .navigation {

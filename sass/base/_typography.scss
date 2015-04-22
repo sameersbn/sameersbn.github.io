@@ -6,7 +6,7 @@ $font-family-monospace:   'Source Code Pro', Menlo, Monaco, Consolas, "Courier N
 
 $headings-font-weight: bold !default;
 $headings-line-height: 1.2 !default;
-$headings-color: #467ed2 !default;
+$headings-color: $link-color !default;
 
 $font-size-base: 15px !default;
 $font-size-h1: 20px !default;
@@ -30,7 +30,7 @@ $title-font-weight: bold !default;
 
 $categories-font-size: 13px !default;
 $date-font-size: 13px !default;
-$date-line-height: 1.9 !default;
+$date-line-height: 2.1 !default;
 
 $footer-font-size: 11px !default;
 $footer-credit-font-size: $footer-font-size !default;

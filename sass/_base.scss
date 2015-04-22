@@ -3,3 +3,7 @@
 @import "base/theme";
 @import "base/typography";
 @import "base/layout";
+
+/* Bootstrap Customization */
+$code-bg: $pre-hll-bg !default;
+$code-color: $pre-hll-fg !default;

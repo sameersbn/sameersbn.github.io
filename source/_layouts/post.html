@@ -9,11 +9,6 @@ single: true
       <article class="hentry" role="article">
         {% include article.html %}
         <footer>
-        <div class="row">
-          <div class="sharing">
-            {% unless page.sharing == false %}{% include post/sharing.html %}{% endunless %}
-          </div>
-        </div>
         {% if page.previous.url or page.next.url %}
           <ul class="pager">
             {% if page.previous.url %}

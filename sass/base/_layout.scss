@@ -47,13 +47,20 @@ article {
     .entry-categories {
       @extend .col-xs-12;
     }
-  }
-  > footer {
     .sharing {
-      @extend .col-xs-12;
+      @extend .col-xs-6;
+      padding-top: 4px;
+    }
+    .donating {
+      @extend .col-xs-6;
+      padding-top: 4px;
       .buttons {
         @extend .pull-right;
       }
+    }
+    .changetip_tipme_button {
+      @extend .pull-left;
+      padding-right: 96px;
     }
   }
 }

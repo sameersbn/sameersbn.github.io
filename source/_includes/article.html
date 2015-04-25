@@ -17,6 +17,14 @@
     <div class="row">
       <div class="entry-categories">{% include post/categories.html %}</div>
     </div>
+    <div class="row">
+      <div class="sharing">
+        {% unless page.sharing == false %}{% include post/sharing.html %}{% endunless %}
+      </div>
+      <div class="donating">
+        {% unless page.donating == false %}{% include post/donating.html %}{% endunless %}
+      </div>
+    </div>
     {% endunless %}
   </header>
 {% endunless %}

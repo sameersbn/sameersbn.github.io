@@ -93,6 +93,9 @@ delicious_count: 3
 # Flattr
 flattr_user: sameersbn
 
+# ChangeTip
+changetip_tip_button: true
+
 # Disqus Comments
 disqus_short_name: sameersbn
 disqus_show_comment_count: true

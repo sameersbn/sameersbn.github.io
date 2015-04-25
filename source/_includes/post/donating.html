@@ -1,0 +1,8 @@
+<div class="buttons">
+  {% if site.flattr_user %}
+    <a class="FlattrButton" style="display:none;" title="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" data-flattr-uid="{{ site.flattr_user }}" data-flattr-tags="{{ page.categories | join: "," }}" data-flattr-button="compact" data-flattr-category="text" href="{{ site.url }}{{ page.url }}">{% if page.description %}{{ page.description }}{% endif %}</a>
+  {% endif %}
+  {% if site.changetip_tip_button %}
+  <div class="changetip_tipme_button" data-bid="9REp6YyoSeZsrvJaaUfxU7" data-uid="q6oUGwQnwJWSYsTpBoZeih"></div>
+  {% endif %}
+</div>

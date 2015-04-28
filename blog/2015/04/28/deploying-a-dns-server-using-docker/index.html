@@ -1,24 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[SAMEER NAIK]]></title>
-  <link href="http://www.damagehead.com/atom.xml" rel="self"/>
-  <link href="http://www.damagehead.com/"/>
-  <updated>2015-04-28T13:29:56+05:30</updated>
-  <id>http://www.damagehead.com/</id>
-  <author>
-    <name><![CDATA[Sameer Naik]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Deploying a DNS Server using Docker - SAMEER NAIK</title>
+  <meta name="author" content="Sameer Naik">
 
   
-  <entry>
-    <title type="html"><![CDATA[Deploying a DNS Server using Docker]]></title>
-    <link href="http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/"/>
-    <updated>2015-04-28T13:16:21+05:30</updated>
-    <id>http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker</id>
-    <content type="html"><![CDATA[<p><strong><em>This is the first part of a series of how-to&rsquo;s where I describe setting up and using various docker containers for home and production use.</em></strong></p>
+  <meta name="description" content="This is the first part of a series of how-to&rsquo;s where I describe setting up and using various docker containers for home and production use. To &hellip;">
+  
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker">
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/stylesheets/screen.css" type="text/css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Varela+Round:400;Source+Code+Pro" type="text/css">
+  <link rel="alternate" href="/atom.xml" title="SAMEER NAIK" type="application/atom+xml">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="/javascripts/html5shiv.min.js"></script>
+    <script src="/javascripts/respond.min.js"></script>
+  <![endif]-->
+
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48810494-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><div class="container">
+  <div class="row">
+    <div class="branding">
+      <h1><a href="/">SAMEER NAIK</a></h1>
+    </div>
+    <div class="clearfix"></div>
+    <div class="navigation">
+  <nav role="navigation">
+    <ul>
+      <li><a href="/">home</a></li>
+      <li><a href="/blog/archives">archives</a></li>
+      
+    </ul>
+  </nav>
+</div>
+
+
+  </div>
+</div>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <article class="hentry" role="article">
+        
+  <header>
+    <div class="row">
+      <div class="entry-title">
+        
+        <h1>Deploying a DNS Server using Docker</h1>
+        
+      </div>
+      <div class="clearfix"></div>
+      <div class="entry-date">
+        <span>
+
+<span class='month'>April</span> <span class='day'>28</span>, <span class='year'>2015</span></span>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="entry-categories">
+
+posted in 
+<span>
+  
+    <a class='category' href='/blog/categories/docker/'>docker</a>, <a class='category' href='/blog/categories/howto/'>howto</a>
+  
+</span>
+
+</div>
+    </div>
+    <div id="share" class="row">
+      
+        <div class="sharing"><div class="buttons">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/" data-via="sameersbn" data-counturl="http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/" >Tweet</a>
+  
+  
+  
+</div>
+</div>
+      
+      
+        <div class="donating"><div class="buttons">
+  
+    <a class="FlattrButton" style="display:none;" title="Deploying a DNS Server using Docker - SAMEER NAIK" data-flattr-uid="sameersbn" data-flattr-tags="docker,howto" data-flattr-button="compact" data-flattr-category="text" href="http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/"></a>
+  
+  
+  <div class="changetip_tipme_button" data-bid="9REp6YyoSeZsrvJaaUfxU7" data-uid="q6oUGwQnwJWSYsTpBoZeih"></div>
+  
+</div>
+</div>
+      
+    </div>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong><em>This is the first part of a series of how-to&rsquo;s where I describe setting up and using various docker containers for home and production use.</em></strong></p>
 
 <p>To start off this series we will use the <a href="https://github.com/sameersbn/docker-bind">sameersbn/bind</a> <a href="https://www.docker.com/">docker</a> image to setup a DNS server in production and host only environments.</p>
 
@@ -45,7 +162,7 @@
 
 <p>Begin by fetching the image from the docker hub.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428130638-docker-pull-bind.gif" class="window-generic"></p>
+<p><img src="/images/20150428130638-docker-pull-bind.gif" class="window-generic"></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>docker pull sameersbn/bind:latest
@@ -54,7 +171,7 @@
 
 <p>Now lets &ldquo;boot&rdquo; the image&hellip;</p>
 
-<p><img src="http://www.damagehead.com/images/20150428130816-docker-run-bind.gif" class="window-generic"></p>
+<p><img src="/images/20150428130816-docker-run-bind.gif" class="window-generic"></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -96,7 +213,7 @@
 
 <p>Before we go any further, lets check if our local DNS server is able to resolve addresses using the unix <code>host</code> command.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428131001-dns-server-test.gif" class="window-generic"></p>
+<p><img src="/images/20150428131001-dns-server-test.gif" class="window-generic"></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>host www.google.com 172.17.42.1
@@ -115,7 +232,7 @@
 
 <p>If you have setup a DNS server for your local network, you can configure your DHCP server to give out the address of the DNS server in the lease. If you do not have a DHCP server running on your network you will have to manually configure it in the operating systems network settings.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428131129-dns-network-configuration.gif" class="window-generic"></p>
+<p><img src="/images/20150428131129-dns-network-configuration.gif" class="window-generic"></p>
 
 <p>Alternately, on linux distributions that use <a href="https://wiki.gnome.org/Projects/NetworkManager">Network Manager</a> (virtually every linux distribution), you can add a <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> configuration (<code>/etc/NetworkManager/dnsmasq.d/dnsmasq.conf</code>) such that the local DNS server would be used for specific addresses, while the default DNS servers would be used otherwise.</p>
 
@@ -144,23 +261,23 @@
 
 <p>Point your web browser to <a href="https://172.17.42.1:10000">https://172.17.42.1:10000</a> and login to webmin as user <code>root</code> and password <code>SecretPassword</code>. Once logged in click on <strong>Servers</strong> and select <strong>BIND DNS Server</strong>.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428131223-webmin-login.gif" class="window-firefox"></p>
+<p><img src="/images/20150428131223-webmin-login.gif" class="window-firefox"></p>
 
 <p>This is where we will perform the DNS configuration. Changes to the configuration can be applied using the <strong>Apply Configuration</strong> link in the top right corner of the page. We will create a domain named <code>example.com</code> for demonstration purposes.</p>
 
 <p>We will start off by creating the reverse zone <code>172.17.42.1</code>. This is <strong><em>optional</em></strong> and required only if you want to be able to do reverse DNS (rDNS) lookups. A rDNS lookup returns the domain name that is associated with a given IP address. To create the zone select <strong>Create master zone</strong> and in the <strong>Create new zone</strong> dialog set the <strong>Zone type</strong> to <strong>Reverse</strong>, the <strong>Network address</strong> to your interface IP address <code>172.17.42.1</code>, the <strong>Master server</strong> to<code>ns.example.com</code> and finally set <strong>Email address</strong> to the domain administrator&rsquo;s email address and select <strong>Create</strong>.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428131314-webmin-bind-reverse-zone.gif" class="window-firefox"></p>
+<p><img src="/images/20150428131314-webmin-bind-reverse-zone.gif" class="window-firefox"></p>
 
 <p>Next, we will the forward zone <code>example.com</code>. To create the zone select <strong>Create master zone</strong> and in the <strong>Create new zone</strong> dialog set the <strong>Zone type</strong> to <strong>Forward</strong>, the <strong>Domain Name</strong> to <code>example.com</code>, the <strong>Master server</strong> to <code>ns.example.com</code> and set <strong>Email address</strong> to the domain administrator&rsquo;s email address and select <strong>Create</strong>. Next, create the DNS entry for <code>ns.example.com</code> pointing to <code>172.17.42.1</code> and apply the configuration.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428131339-webmin-bind-forward-zone.gif" class="window-firefox"></p>
+<p><img src="/images/20150428131339-webmin-bind-forward-zone.gif" class="window-firefox"></p>
 
 <p>To complete this tutorial we will create a address (A) entry for <code>webserver.example.com</code> and then add a domain name alias (CNAME) entry <code>www.example.com</code> which will point to <code>webserver.example.com</code>.</p>
 
 <p>To create a A entry, select the zone <code>example.com</code> and then select the <strong>Address</strong> option. Set the <strong>Name</strong> to <code>webserver</code> and the <strong>Address</strong> to <code>192.168.1.1</code>. To create a CNAME entry, select the zone <code>example.com</code> and then select the <strong>Name Alias</strong> option. Set the <strong>Name</strong> to <code>www</code> and the <strong>Real Name</strong> to <code>webserver</code> and apply the configuration.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428131424-webmin-bind-sample-entries.gif" class="window-firefox"></p>
+<p><img src="/images/20150428131424-webmin-bind-sample-entries.gif" class="window-firefox"></p>
 
 <p>And now, the moment of truth&hellip;</p>
 
@@ -173,25 +290,121 @@
 
 <p>These commands should return the DNS addresses as per our configuration. Time to find out.</p>
 
-<p><img src="http://www.damagehead.com/images/20150428131518-dns-server-test2.gif" class="window-generic"></p>
+<p><img src="/images/20150428131518-dns-server-test2.gif" class="window-generic"></p>
 
 <p>An there you have it. A local DNS server with a local domain named <code>example.com</code>.</p>
-]]></content>
-  </entry>
+</div>
+
+
+        <footer>
+        
+          <div class="sharing">
+            If you found this post useful don&#8217;t forget to <a href="#share">share</a> it with your friends.
+          </div>
+        
+        
+          <ul class="pager">
+            
+            <li class="previous"><a href="/blog/2014/10/31/hello-world/">&larr; Older</a></li>
+            
+            
+          </ul>
+        
+        </footer>
+      </article>
+      
+        <section>
+          <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        </section>
+      
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><div class="container">
+  <div class="row">
+    <div class="footer">
+      <p>
+        <span class="copyright">Copyright &copy; 2015 Sameer Naik. All Rights Reserved.</span>
+        <span class="disclaimer">The views and opinions expressed in this site are strictly my own and do not represent my employer’s opinions and strategies.</span>
+        <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+      </p>
+    </div>
+  </div>
+</div>
+
+</footer>
   
-  <entry>
-    <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://www.damagehead.com/blog/2014/10/31/hello-world/"/>
-    <updated>2014-10-31T23:53:29+05:30</updated>
-    <id>http://www.damagehead.com/blog/2014/10/31/hello-world</id>
-    <content type="html"><![CDATA[<p>Hello and welcome to my blog.</p>
 
-<p>My name is <strong>Sameer Naik</strong> and I work as a software developer in <strong>Bangalore, India</strong>. I go by the handle <strong>sameersbn</strong> on <a href="//twitter.com/sameersbn">Twitter</a> and <a href="//github.com/sameersbn">GitHub</a>.</p>
+<script type="text/javascript">
+      var disqus_shortname = 'sameersbn';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/';
+        var disqus_url = 'http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
-<p>On this blog I will share my experience as a software developer, talk about opensource projects, docker and other interesting stuff.</p>
 
-<p>I hope you find my posts useful in some way or the other and share them with your friends.</p>
-]]></content>
-  </entry>
-  
-</feed>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+  (function() {
+    var s = document.createElement('script');
+    var t = document.getElementsByTagName('script')[0];
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+  })();
+/* ]]> */
+</script>
+
+
+
+<script>
+  (function(document,script,id){
+    var js,r=document.getElementsByTagName(script)[0],protocol=/^http:/.test(document.location)?'http':'https';
+    if(!document.getElementById(id)) {
+      js=document.createElement(script);
+      js.id=id;
+      js.src=protocol+'://widgets.changetip.com/public/js/widgets.js';
+      r.parentNode.insertBefore(js,r)
+    }
+  }(document,'script','changetip_w_0'));
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

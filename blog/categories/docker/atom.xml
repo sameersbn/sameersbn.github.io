@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[SAMEER NAIK]]></title>
-  <link href="http://www.damagehead.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: docker | SAMEER NAIK]]></title>
+  <link href="http://www.damagehead.com/blog/categories/docker/atom.xml" rel="self"/>
   <link href="http://www.damagehead.com/"/>
   <updated>2015-04-28T13:29:56+05:30</updated>
   <id>http://www.damagehead.com/</id>
@@ -47,27 +47,19 @@
 
 <p><img src="http://www.damagehead.com/images/20150428130638-docker-pull-bind.gif" class="window-generic"></p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>docker pull sameersbn/bind:latest
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="bash">docker pull sameersbn/bind:latest
+</code></pre>
 
 <p>Now lets &ldquo;boot&rdquo; the image&hellip;</p>
 
 <p><img src="http://www.damagehead.com/images/20150428130816-docker-run-bind.gif" class="window-generic"></p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>docker run -d --name<span class="o">=</span><span class="nb">bind</span> --dns<span class="o">=</span>127.0.0.1 <span class="se">\</span>
-</span><span class='line'>  --publish<span class="o">=</span>172.17.42.1:53:53/udp --publish<span class="o">=</span>172.17.42.1:10000:10000 <span class="se">\</span>
-</span><span class='line'>  --volume<span class="o">=</span>/srv/docker/bind:/data <span class="se">\</span>
-</span><span class='line'>  --env<span class="o">=</span><span class="s1">&#39;ROOT_PASSWORD=SecretPassword&#39;</span> <span class="se">\</span>
-</span><span class='line'>  sameersbn/bind:latest
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="bash">docker run -d --name=bind --dns=127.0.0.1 \
+  --publish=172.17.42.1:53:53/udp --publish=172.17.42.1:10000:10000 \
+  --volume=/srv/docker/bind:/data \
+  --env='ROOT_PASSWORD=SecretPassword' \
+  sameersbn/bind:latest
+</code></pre>
 
 <p><em>Here is the gist of the equivalent configuration in <a href="https://gist.github.com/sameersbn/ea4692d9a8ee7accd6b3">docker-compose.yml</a> form.</em></p>
 
@@ -98,10 +90,8 @@
 
 <p><img src="http://www.damagehead.com/images/20150428131001-dns-server-test.gif" class="window-generic"></p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>host www.google.com 172.17.42.1
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="bash">host www.google.com 172.17.42.1
+</code></pre>
 
 <ul>
 <li><code>www.google.com</code> the address to resolve</li>
@@ -119,20 +109,13 @@
 
 <p>Alternately, on linux distributions that use <a href="https://wiki.gnome.org/Projects/NetworkManager">Network Manager</a> (virtually every linux distribution), you can add a <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a> configuration (<code>/etc/NetworkManager/dnsmasq.d/dnsmasq.conf</code>) such that the local DNS server would be used for specific addresses, while the default DNS servers would be used otherwise.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>domain-needed
-</span><span class='line'>all-servers
-</span><span class='line'>cache-size<span class="o">=</span>5000
-</span><span class='line'>strict-order
-</span><span class='line'>
-</span><span class='line'><span class="nv">server</span><span class="o">=</span>/example.com/google.com/172.17.42.1
-</span></code></pre></td></tr></table></div></figure>
+<pre><code>domain-needed
+all-servers
+cache-size=5000
+strict-order
 
+server=/example.com/google.com/172.17.42.1
+</code></pre>
 
 <p>In the above example, Regardless of the primary DNS configuration the DNS server at <code>172.17.42.1</code> will be used to resolve <code>example.com</code> and <code>google.com</code> addresses. This is particularly useful in host only configurations when you setup a domain to address various services on the local host without having to manually change the DNS configuration everytime you connect to a different network.</p>
 
@@ -164,33 +147,15 @@
 
 <p>And now, the moment of truth&hellip;</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>host webserver.example.com 172.17.42.1
-</span><span class='line'>host www.example.com 172.17.42.1
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="bash">host webserver.example.com 172.17.42.1
+host www.example.com 172.17.42.1
+</code></pre>
 
 <p>These commands should return the DNS addresses as per our configuration. Time to find out.</p>
 
 <p><img src="http://www.damagehead.com/images/20150428131518-dns-server-test2.gif" class="window-generic"></p>
 
 <p>An there you have it. A local DNS server with a local domain named <code>example.com</code>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello World!]]></title>
-    <link href="http://www.damagehead.com/blog/2014/10/31/hello-world/"/>
-    <updated>2014-10-31T23:53:29+05:30</updated>
-    <id>http://www.damagehead.com/blog/2014/10/31/hello-world</id>
-    <content type="html"><![CDATA[<p>Hello and welcome to my blog.</p>
-
-<p>My name is <strong>Sameer Naik</strong> and I work as a software developer in <strong>Bangalore, India</strong>. I go by the handle <strong>sameersbn</strong> on <a href="//twitter.com/sameersbn">Twitter</a> and <a href="//github.com/sameersbn">GitHub</a>.</p>
-
-<p>On this blog I will share my experience as a software developer, talk about opensource projects, docker and other interesting stuff.</p>
-
-<p>I hope you find my posts useful in some way or the other and share them with your friends.</p>
 ]]></content>
   </entry>
   

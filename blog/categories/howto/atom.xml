@@ -4,7 +4,7 @@
   <title><![CDATA[Category: howto | SAMEER NAIK]]></title>
   <link href="http://www.damagehead.com/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://www.damagehead.com/"/>
-  <updated>2015-04-28T13:29:56+05:30</updated>
+  <updated>2015-04-28T13:36:16+05:30</updated>
   <id>http://www.damagehead.com/</id>
   <author>
     <name><![CDATA[Sameer Naik]]></name>
@@ -117,7 +117,7 @@ strict-order
 server=/example.com/google.com/172.17.42.1
 </code></pre>
 
-<p>In the above example, Regardless of the primary DNS configuration the DNS server at <code>172.17.42.1</code> will be used to resolve <code>example.com</code> and <code>google.com</code> addresses. This is particularly useful in host only configurations when you setup a domain to address various services on the local host without having to manually change the DNS configuration everytime you connect to a different network.</p>
+<p>In the above example, regardless of the primary DNS configuration the DNS server at <code>172.17.42.1</code> will be used to resolve <code>example.com</code> and <code>google.com</code> addresses. This is particularly useful in host only configurations when you setup a domain to address various services on the local host without having to manually change the DNS configuration everytime you connect to a different network.</p>
 
 <p>After performing the <code>dnsmasq</code> configuration the network manager needs to be restarted for the changes to take effect. On Ubuntu, this is achieved using the command <code>restart network-manager</code></p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: docker | SAMEER NAIK]]></title>
   <link href="http://www.damagehead.com/blog/categories/docker/atom.xml" rel="self"/>
   <link href="http://www.damagehead.com/"/>
-  <updated>2015-04-28T13:36:16+05:30</updated>
+  <updated>2015-04-28T14:38:31+05:30</updated>
   <id>http://www.damagehead.com/</id>
   <author>
     <name><![CDATA[Sameer Naik]]></name>
@@ -74,7 +74,7 @@
 </ul>
 
 
-<p>In the above command the DNS server will only be accessible to the host and other containers over the docker bridge interface (host only). If you want the DNS server to be accessible over the network you should replace <code>--publish=172.17.42.1:53:53/udp</code> to <code>--publish=53:53/udp</code> (all interfaces) or something like <code>--publish=192.168.1.1:53:53/udp</code> (specific interface).</p>
+<p>In the above command the DNS server will only be accessible to the host and other containers over the docker bridge interface (host only). If you want the DNS server to be accessible over the network you should replace <code>--publish=172.17.42.1:53:53/udp</code> with <code>--publish=53:53/udp</code> (all interfaces) or something like <code>--publish=192.168.1.1:53:53/udp</code> (specific interface).</p>
 
 <p><strong><em>From this point on <code>172.17.42.1</code> will refer to our local DNS server. Replace it with the appropriate address depending on your setup.</em></strong></p>
 

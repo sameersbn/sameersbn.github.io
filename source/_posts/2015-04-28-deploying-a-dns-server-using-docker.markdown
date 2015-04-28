@@ -66,7 +66,7 @@ docker run -d --name=bind --dns=127.0.0.1 \
 - `--env='ROOT_PASSWORD=SecretPassword'` sets the root password to `SecretPassword`
 
 
-In the above command the DNS server will only be accessible to the host and other containers over the docker bridge interface (host only). If you want the DNS server to be accessible over the network you should replace `--publish=172.17.42.1:53:53/udp` to `--publish=53:53/udp` (all interfaces) or something like `--publish=192.168.1.1:53:53/udp` (specific interface).
+In the above command the DNS server will only be accessible to the host and other containers over the docker bridge interface (host only). If you want the DNS server to be accessible over the network you should replace `--publish=172.17.42.1:53:53/udp` with `--publish=53:53/udp` (all interfaces) or something like `--publish=192.168.1.1:53:53/udp` (specific interface).
 
 ***From this point on `172.17.42.1` will refer to our local DNS server. Replace it with the appropriate address depending on your setup.***
 

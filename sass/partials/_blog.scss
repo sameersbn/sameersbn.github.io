@@ -1,5 +1,6 @@
 article {
   font-size: $content-font-size;
+  line-height: $content-line-height;
   header {
     margin: 10px 0;
     h1 {
@@ -59,7 +60,7 @@ article {
       padding-top: image-height("window-chrome-md.png") !important;
       background: url("/images/window-chrome-md.png") no-repeat;
       border: 1px solid #d8d8d8;
-      @include border-radius(.5em);
+      @include border-radius(.5em .5em 0 0);
       @include box-shadow(rgba(#000, .25) 0 0 20px);
     }
   }
@@ -68,7 +69,7 @@ article {
       padding-top: image-height("window-chrome-xs.png") !important;
       background: url("/images/window-chrome-xs.png") no-repeat;
       border: 1px solid #d8d8d8;
-      @include border-radius(.3em);
+      @include border-radius(.3em .3em 0 0);
       @include box-shadow(rgba(#000, .25) 0 0 10px);
     }
   }
@@ -78,7 +79,7 @@ article {
       padding-top: image-height("window-yosemite-md.png") !important;
       background: url("/images/window-yosemite-md.png") no-repeat;
       border: 1px solid #d8d8d8;
-      @include border-radius(.3em);
+      @include border-radius(.3em .3em 0 0);
       @include box-shadow(rgba(#000, .25) 0 0 20px);
     }
   }
@@ -97,7 +98,7 @@ article {
       padding-top: image-height("window-firefox-md.png") !important;
       background: url("/images/window-firefox-md.png") no-repeat;
       border: 1px solid #d8d8d8;
-      @include border-radius(.5em);
+      @include border-radius(.5em .5em 0 0);
       @include box-shadow(rgba(#000, .25) 0 0 20px);
     }
   }
@@ -106,7 +107,7 @@ article {
       padding-top: image-height("window-firefox-xs.png") !important;
       background: url("/images/window-firefox-xs.png") no-repeat;
       border: 1px solid #d8d8d8;
-      @include border-radius(.4em);
+      @include border-radius(.4em .4em 0 0);
       @include box-shadow(rgba(#000, .25) 0 0 10px);
     }
   }
@@ -116,7 +117,7 @@ article {
       padding-top: image-height("window-generic-md.png") !important;
       background: url("/images/window-generic-md.png") no-repeat;
       border: 2px solid #323232;
-      @include border-radius(.5em);
+      @include border-radius(.3em .3em 0 0);
       @include box-shadow(rgba(#000, .25) 0 0 20px);
     }
   }
@@ -125,7 +126,7 @@ article {
       padding-top: image-height("window-generic-xs.png") !important;
       background: url("/images/window-generic-xs.png") no-repeat;
       border: 2px solid #323232;
-      @include border-radius(.3em);
+      @include border-radius(.3em .3em 0 0);
       @include box-shadow(rgba(#000, .25) 0 0 10px);
     }
   }

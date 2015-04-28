@@ -1,0 +1,24 @@
+article {
+  > header {
+    .sharing {
+      padding-top: 4px;
+    }
+    .donating {
+      padding-top: 4px;
+      .buttons {
+        @extend .pull-right;
+      }
+    }
+    .changetip_tipme_button {
+      @extend .pull-left;
+      padding-right: 96px;
+    }
+  }
+  > footer {
+    .sharing {
+      padding-bottom: 10px;
+      font-size: 13px;
+      font-style: italic;
+    }
+  }
+}

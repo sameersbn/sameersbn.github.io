@@ -108,7 +108,7 @@ strict-order
 server=/example.com/google.com/172.17.42.1
 ```
 
-In the above example, Regardless of the primary DNS configuration the DNS server at `172.17.42.1` will be used to resolve `example.com` and `google.com` addresses. This is particularly useful in host only configurations when you setup a domain to address various services on the local host without having to manually change the DNS configuration everytime you connect to a different network.
+In the above example, regardless of the primary DNS configuration the DNS server at `172.17.42.1` will be used to resolve `example.com` and `google.com` addresses. This is particularly useful in host only configurations when you setup a domain to address various services on the local host without having to manually change the DNS configuration everytime you connect to a different network.
 
 After performing the `dnsmasq` configuration the network manager needs to be restarted for the changes to take effect. On Ubuntu, this is achieved using the command `restart network-manager`
 

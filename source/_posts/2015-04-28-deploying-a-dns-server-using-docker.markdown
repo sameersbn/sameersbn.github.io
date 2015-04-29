@@ -147,4 +147,3 @@ These commands should return the DNS addresses as per our configuration. Time to
 <img src="/images/20150428131518-dns-server-test2.gif" class="window-generic">
 
 And there you have it. A local DNS server with a local domain named `example.com`.
-

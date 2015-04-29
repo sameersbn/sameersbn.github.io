@@ -150,13 +150,13 @@ posted in
 
 <p><strong><em>A couple of reasons to set up a DNS server.</em></strong></p>
 
-<p>By setting up your own local DNS server you don&rsquo;t rely on your ISP&rsquo;s DNS servers which are often bogged down by incoming traffic which makes responses to DNS queries take longer to get serviced.</p>
+<p>By setting up a local DNS server you don&rsquo;t rely on your ISP&rsquo;s DNS servers which are often bogged down by incoming traffic which makes responses to DNS queries take longer to get serviced.</p>
 
-<p>Besides performing domain name resolutions, a DNS server also acts as a cache. This means that DNS queries could get serviced from the local cache as long as the cached DNS entry has not timed out. Overall the cache speeds up DNS responses.</p>
+<p>Besides performing domain name resolutions, a BIND server also acts as a DNS cache. This means that DNS queries could get serviced from the local cache. This in turn speeds up DNS responses.</p>
 
 <p>Some ISP&rsquo;s block access to websites by DNS spoofing. Setting up your own DNS server can help you get around this. However, a more effective way to circumvent this type of censorship is by using the <a href="https://www.torproject.org/projects/torbrowser.html.en">tor browser</a> which can be installed using the <a href="https://github.com/sameersbn/docker-browser-box">sameersbn/browser-box</a> image.</p>
 
-<p>Finally and most importantly, a local DNS server will enable you to define a domain for your local network. This will allow you to address machines/services on the network with a name rather than the IP address. When setting up web services whether you do it using docker or otherwise, installing a DNS server makes the setup much simpler and easier to deal with.</p>
+<p>Finally and most importantly, a local DNS server will enable you to define a domain for your local network. This allows you to address machines/services on the network with a name rather than its IP address. When setting up web services whether you do it using docker or otherwise, installing a DNS server makes the setup much simpler and easier to deal with.</p>
 
 <h1>Setting up the image</h1>
 
@@ -205,13 +205,13 @@ posted in
 
 <p>The <a href="https://github.com/sameersbn/docker-bind">sameersbn/bind</a> image includes webmin, a web-based interface for system administration, so that you can quickly and easily configure BIND. Webmin is launched automatically when the image is started.</p>
 
-<p>If you prefer configuring BIND by hand, you can turn off webmin by setting <code>--env='WEBMIN_ENABLED=false'</code> in the docker run command. The BIND specific configuration will be available at <code>/srv/docker/bind/bind</code>. To apply your configuration send the <code>HUP</code> signal to the container using <code>docker kill -s HUP bind</code></p>
+<p>If you prefer configuring BIND by hand, you can turn off webmin startup by setting <code>--env='WEBMIN_ENABLED=false'</code> in the run command. The BIND specific configuration will be available at <code>/srv/docker/bind/bind</code>. To apply your configuration send the <code>HUP</code> signal to the container using <code>docker kill -s HUP bind</code></p>
 
-<p>Lastly, when <code>--env='ROOT_PASSWORD=SecretPassword'</code> is not specified in the run command, a random password is generated and assigned for the root user which can be retrieved with <code>docker logs bind 2&gt;&amp;1 | grep '^User: ' | tail -n1</code>. This password is used while logging in to the webmin interface.</p>
+<p>Finally, if <code>--env='ROOT_PASSWORD=SecretPassword'</code> is not specified in the run command, a random password is generated and assigned for the root user which can be retrieved with <code>docker logs bind 2&gt;&amp;1 | grep '^User: ' | tail -n1</code>. This password is used while logging in to the webmin interface.</p>
 
 <h1>Test the DNS server</h1>
 
-<p>Before we go any further, lets check if our local DNS server is able to resolve addresses using the unix <code>host</code> command.</p>
+<p>Before we go any further, lets check if our DNS server is able to resolve addresses using the unix <code>host</code> command.</p>
 
 <p><img src="/images/20150428131001-dns-server-test.gif" class="window-generic"></p>
 
@@ -226,11 +226,11 @@ posted in
 </ul>
 
 
-<p>If everything works as expected the <code>host</code> command should execute successfully and should return the IP address of <code>www.google.com</code>.</p>
+<p>If everything works as expected the <code>host</code> command should return the IP address of <code>www.google.com</code>.</p>
 
 <h1>Using the DNS server</h1>
 
-<p>If you have setup a DNS server for your local network, you can configure your DHCP server to give out the address of the DNS server in the lease. If you do not have a DHCP server running on your network you will have to manually configure it in the operating systems network settings.</p>
+<p>If you have setup a DNS server for your local network, you can configure your DHCP server to give out the DNS servers address in the lease responses. If you do not have a DHCP server running on your network <em>(why?)</em> you will have to manually configure it in the operating systems network settings.</p>
 
 <p><img src="/images/20150428131129-dns-network-configuration.gif" class="window-generic"></p>
 
@@ -255,7 +255,7 @@ posted in
 
 <p>After performing the <code>dnsmasq</code> configuration the network manager needs to be restarted for the changes to take effect. On Ubuntu, this is achieved using the command <code>restart network-manager</code></p>
 
-<p>Lastly, we can configure docker such that the containers are automatically configured to use our DNS server. This is done by adding <code>--dns 172.17.42.1</code> to the docker daemon command. On Ubuntu, this is done at <code>/etc/default/docker</code>. The docker daemon needs to be restarted for these changes to take effect.</p>
+<p>Finally, we can configure docker such that the containers are automatically configured to use our DNS server. This is done by adding <code>--dns 172.17.42.1</code> to the docker daemon command. On Ubuntu, this is done at <code>/etc/default/docker</code>. The docker daemon needs to be restarted for these changes to take effect.</p>
 
 <h1>Creating a domain using webmin</h1>
 
@@ -265,17 +265,17 @@ posted in
 
 <p>This is where we will perform the DNS configuration. Changes to the configuration can be applied using the <strong>Apply Configuration</strong> link in the top right corner of the page. We will create a domain named <code>example.com</code> for demonstration purposes.</p>
 
-<p>We will start off by creating the reverse zone <code>172.17.42.1</code>. This is <strong><em>optional</em></strong> and required only if you want to be able to do reverse DNS (rDNS) lookups. A rDNS lookup returns the domain name that is associated with a given IP address. To create the zone select <strong>Create master zone</strong> and in the <strong>Create new zone</strong> dialog set the <strong>Zone type</strong> to <strong>Reverse</strong>, the <strong>Network address</strong> to your interface IP address <code>172.17.42.1</code>, the <strong>Master server</strong> to<code>ns.example.com</code> and finally set <strong>Email address</strong> to the domain administrator&rsquo;s email address and select <strong>Create</strong>.</p>
+<p>We start by creating the reverse zone <code>172.17.42.1</code>. This is <strong><em>optional</em></strong> and required only if you want to be able to do reverse DNS (rDNS) lookups. A rDNS lookup returns the domain name that is associated with a given IP address. To create the zone select <strong>Create master zone</strong> and in the <strong>Create new zone</strong> dialog set the <strong>Zone type</strong> to <strong>Reverse</strong>, the <strong>Network address</strong> to your interface IP address <code>172.17.42.1</code>, the <strong>Master server</strong> to<code>ns.example.com</code> and finally set <strong>Email address</strong> to the domain administrator&rsquo;s email address and select <strong>Create</strong>.</p>
 
 <p><img src="/images/20150428131314-webmin-bind-reverse-zone.gif" class="window-firefox"></p>
 
-<p>Next, we will the forward zone <code>example.com</code>. To create the zone select <strong>Create master zone</strong> and in the <strong>Create new zone</strong> dialog set the <strong>Zone type</strong> to <strong>Forward</strong>, the <strong>Domain Name</strong> to <code>example.com</code>, the <strong>Master server</strong> to <code>ns.example.com</code> and set <strong>Email address</strong> to the domain administrator&rsquo;s email address and select <strong>Create</strong>. Next, create the DNS entry for <code>ns.example.com</code> pointing to <code>172.17.42.1</code> and apply the configuration.</p>
+<p>Next, we create the forward zone <code>example.com</code> by selecting <strong>Create master zone</strong> and in the <strong>Create new zone</strong> dialog set the <strong>Zone type</strong> to <strong>Forward</strong>, the <strong>Domain Name</strong> to <code>example.com</code>, the <strong>Master server</strong> to <code>ns.example.com</code> and set <strong>Email address</strong> to the domain administrator&rsquo;s email address and select <strong>Create</strong>. Next, create the DNS entry for <code>ns.example.com</code> pointing to <code>172.17.42.1</code> and apply the configuration.</p>
 
 <p><img src="/images/20150428131339-webmin-bind-forward-zone.gif" class="window-firefox"></p>
 
 <p>To complete this tutorial we will create a address (A) entry for <code>webserver.example.com</code> and then add a domain name alias (CNAME) entry <code>www.example.com</code> which will point to <code>webserver.example.com</code>.</p>
 
-<p>To create a A entry, select the zone <code>example.com</code> and then select the <strong>Address</strong> option. Set the <strong>Name</strong> to <code>webserver</code> and the <strong>Address</strong> to <code>192.168.1.1</code>. To create a CNAME entry, select the zone <code>example.com</code> and then select the <strong>Name Alias</strong> option. Set the <strong>Name</strong> to <code>www</code> and the <strong>Real Name</strong> to <code>webserver</code> and apply the configuration.</p>
+<p>To create the A entry, select the zone <code>example.com</code> and then select the <strong>Address</strong> option. Set the <strong>Name</strong> to <code>webserver</code> and the <strong>Address</strong> to <code>192.168.1.1</code>. To create the CNAME entry, select the zone <code>example.com</code> and then select the <strong>Name Alias</strong> option. Set the <strong>Name</strong> to <code>www</code> and the <strong>Real Name</strong> to <code>webserver</code> and apply the configuration.</p>
 
 <p><img src="/images/20150428131424-webmin-bind-sample-entries.gif" class="window-firefox"></p>
 
@@ -292,7 +292,7 @@ posted in
 
 <p><img src="/images/20150428131518-dns-server-test2.gif" class="window-generic"></p>
 
-<p>An there you have it. A local DNS server with a local domain named <code>example.com</code>.</p>
+<p>And there you have it. A local DNS server with a local domain named <code>example.com</code>.</p>
 </div>
 
 

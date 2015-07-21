@@ -73,7 +73,7 @@ The [sameersbn/bind](https://github.com/sameersbn/docker-bind) image includes we
 
 If you prefer configuring BIND by hand, you can turn off webmin startup by setting `--env='WEBMIN_ENABLED=false'` in the run command. The BIND specific configuration will be available at `/srv/docker/bind/bind`. To apply your configuration send the `HUP` signal to the container using `docker kill -s HUP bind`
 
-Finally, if `--env='ROOT_PASSWORD=SecretPassword'` is not specified in the run command, a random password is generated and assigned for the root user which can be retrieved with `docker logs bind 2>&1 | grep '^User: ' | tail -n1`. This password is used while logging in to the webmin interface.
+Finally, if `--env='ROOT_PASSWORD=SecretPassword'` is not specified in the run command, the password for the `root` user is set to `password`. This password is used while logging in to the webmin interface.
 
 # Test the DNS server
 

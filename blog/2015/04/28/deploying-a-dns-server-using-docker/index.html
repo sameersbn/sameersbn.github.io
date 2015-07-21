@@ -210,7 +210,7 @@ posted in
 
 <p>If you prefer configuring BIND by hand, you can turn off webmin startup by setting <code>--env='WEBMIN_ENABLED=false'</code> in the run command. The BIND specific configuration will be available at <code>/srv/docker/bind/bind</code>. To apply your configuration send the <code>HUP</code> signal to the container using <code>docker kill -s HUP bind</code></p>
 
-<p>Finally, if <code>--env='ROOT_PASSWORD=SecretPassword'</code> is not specified in the run command, a random password is generated and assigned for the root user which can be retrieved with <code>docker logs bind 2&gt;&amp;1 | grep '^User: ' | tail -n1</code>. This password is used while logging in to the webmin interface.</p>
+<p>Finally, if <code>--env='ROOT_PASSWORD=SecretPassword'</code> is not specified in the run command, the password for the <code>root</code> user is set to <code>password</code>. This password is used while logging in to the webmin interface.</p>
 
 <h1>Test the DNS server</h1>
 

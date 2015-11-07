@@ -23,15 +23,6 @@ footer: false
 
 <div class="text-center">
   <h1>Bitcoin</h1>
-  <a href="bitcoin:13odNBmcrigP85t55XgfoYymcaCn5rZmQ">
-    <img src="/images/bitcoin.png" alt="13odNBmcrigP85t55XgfoYymcaCn5rZmQ">13odNBmcrigP85t55XgfoYymcaCn5rZmQ
-  </a>
-</div>
-
-<hr>
-
-<div class="text-center">
-  <h1>Coinbase</h1>
   <a href="//www.coinbase.com/sameersbn">coinbase.com/sameersbn</a>
 </div>
 

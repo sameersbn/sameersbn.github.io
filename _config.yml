@@ -94,7 +94,7 @@ delicious_count: 3
 flattr_user:
 
 # ChangeTip
-changetip_tip_button: true
+changetip_tip_button: false
 
 # Disqus Comments
 disqus_short_name: sameersbn

@@ -9,6 +9,13 @@ footer: false
 
 <hr>
 
+<div class="text-center">
+  <h1>Bitcoin</h1>
+  <a href="bitcoin:1LomxrVi2PL4ALWVj7b7buKhRqeynskeS8">1LomxrVi2PL4ALWVj7b7buKhRqeynskeS8</a>
+</div>
+
+<hr>
+
 <div id="paypal" class="text-center">
   <h1>Paypal</h1>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -17,13 +24,6 @@ footer: false
     <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
     <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
   </form>
-</div>
-
-<hr>
-
-<div class="text-center">
-  <h1>Bitcoin</h1>
-  <a href="//www.coinbase.com/sameersbn">coinbase.com/sameersbn</a>
 </div>
 
 <hr>

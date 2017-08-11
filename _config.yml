@@ -91,7 +91,7 @@ delicious_user:
 delicious_count: 3
 
 # Flattr
-flattr_user: sameersbn
+flattr_user:
 
 # ChangeTip
 changetip_tip_button: true

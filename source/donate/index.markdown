@@ -18,7 +18,7 @@ footer: false
 
 <div class="text-center">
   <h1>Bitcoin</h1>
-  <a href="bitcoin:1LomxrVi2PL4ALWVj7b7buKhRqeynskeS8">1LomxrVi2PL4ALWVj7b7buKhRqeynskeS8</a>
+  <a href="bitcoin:3B5HLdjsXSLnBQJHSCyG5gRWJGDXbf2XeK">3B5HLdjsXSLnBQJHSCyG5gRWJGDXbf2XeK</a>
 </div>
 
 <hr>

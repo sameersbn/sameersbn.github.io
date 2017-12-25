@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.damagehead.com/blog/2017/06/07/a-look-at-application-development-with-visual-studio-code-and-kubernetes/</loc>
-    <lastmod>2017-06-07T08:53:51+05:30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/</loc>
     <lastmod>2015-04-28T13:16:21+05:30</lastmod>
     <priority>0.8</priority>
@@ -17,31 +12,31 @@
   </url>
   <url>
     <loc>http://www.damagehead.com/projects/</loc>
-    <lastmod>2017-10-09T15:19:07+05:30</lastmod>
+    <lastmod>2017-12-25T19:11:52+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.damagehead.com/</loc>
-    <lastmod>2017-10-09T15:19:07+05:30</lastmod>
+    <lastmod>2017-12-25T19:11:52+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://www.damagehead.com/blog/archives/</loc>
-    <lastmod>2017-10-09T15:19:07+05:30</lastmod>
+    <lastmod>2017-12-25T19:11:52+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.damagehead.com/about/</loc>
-    <lastmod>2017-10-09T15:19:07+05:30</lastmod>
+    <lastmod>2017-12-25T19:11:52+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.damagehead.com/donate/</loc>
-    <lastmod>2017-10-09T15:19:07+05:30</lastmod>
+    <lastmod>2017-12-25T19:11:52+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

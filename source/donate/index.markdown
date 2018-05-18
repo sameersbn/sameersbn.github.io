@@ -11,14 +11,14 @@ footer: false
 
 <div class="text-center">
   <h1>Bitcoin Cash</h1>
-  <a href="1F7MAVVgn4dUbo4h8SkQSkaWfGc2yM4X2S">1F7MAVVgn4dUbo4h8SkQSkaWfGc2yM4X2S</a>
+  <a href="bitcoincash:qzdv294ggshk3ctfqxv57efq3mkk48p3pv4j8k4ssl">bitcoincash:qzdv294ggshk3ctfqxv57efq3mkk48p3pv4j8k4ssl</a>
 </div>
 
 <hr>
 
 <div class="text-center">
   <h1>Bitcoin</h1>
-  <a href="bitcoin:3B5HLdjsXSLnBQJHSCyG5gRWJGDXbf2XeK">3B5HLdjsXSLnBQJHSCyG5gRWJGDXbf2XeK</a>
+  <a href="bitcoin:3B5HLdjsXSLnBQJHSCyG5gRWJGDXbf2XeK">bitcoin:3B5HLdjsXSLnBQJHSCyG5gRWJGDXbf2XeK</a>
 </div>
 
 <hr>
